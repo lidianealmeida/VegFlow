@@ -1,4 +1,3 @@
-//  Initialize Firebase
   var config = {
     apiKey: "AIzaSyBIML5Z6VHQH1jIqMhff3Z194osf44ntA0",
     authDomain: "vegflow-98036.firebaseapp.com",
@@ -8,3 +7,4 @@
     messagingSenderId: "25129738716"
   };
   firebase.initializeApp(config);
+
