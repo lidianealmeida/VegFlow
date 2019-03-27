@@ -1,0 +1,217 @@
+.container{ 
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;  
+    margin: 0px;
+    padding: 0px;
+ } 
+
+/* Configurações gerais */
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+    background-color: #e8f5fd; 
+  }
+  
+  .section-border {
+    border-radius: 5px;
+  }
+  
+  .line {
+    width: 100%;
+    border: 1px solid #e8f5fd;
+  }
+  
+  /* Cabeçalho */
+  .header {
+    width: 100%;
+    height: 70px;
+    background-color: #23afaf;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Principal */
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 22% 43%; 
+    grid-template-areas: 
+    "profile tweet"
+    "feed feed";
+    grid-gap: 15px;
+    justify-content: center;
+    padding: 15px 0px;
+  }
+  
+  /* Perfil */
+  .profile {
+    grid-area: profile;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 3px 6px 6px rgba(75, 136, 179, 0.1); 
+  }
+  
+  .profile-picture {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    opacity: 0.8;
+  }
+  
+  .profile-name {
+    margin-bottom: 0px;
+  }
+  
+  .profile-user {
+    color: grey;
+    margin-top: 3px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .info-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: grey;
+    margin-top: 12px;
+    margin-bottom: 0px;
+  }
+  
+  .info-numbers {
+    font-size: 20px;
+    font-weight: bold;
+    color: #67747c;  
+  }
+  
+  /* Escrever tweet */
+  .tweet {
+    grid-area: tweet;
+    background-color: white;
+    box-shadow: 0px 3px 6px 6px rgba(75, 136, 179, 0.1); 
+  }
+  
+  .tweet-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .tweet-input {
+    border: 2px solid #c3d5e0;
+    border-radius: 9px;
+    outline: 0;
+    font-family: 'Open Sans', sans-serif;
+    padding: 8px;
+    resize: none;
+    max-height: 200px;
+    overflow: hidden;
+  }
+  
+  .tweet-button {
+    border: none;
+    border-radius: 17px;
+    outline: 0;
+    background-color: #23afaf;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    align-self: flex-end;
+    padding: 8px 17px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    cursor: not-allowed;
+    opacity: 0.3;
+  }
+  
+  .tweet-button:hover {
+    background-color: #23afaf;
+  }
+  
+  .character-counter {
+    align-self: flex-end;
+    font-size: 14px;
+    padding-top: 5px;
+  }
+
+  /* Botões público e privado */
+  .privacy {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-around;
+    width: 70%;
+    margin: 0px 30px;
+  }
+  
+  .privacy-text {
+    font-size: 12px;
+    margin: 0;
+  }
+  
+  /* Feed */
+  .feed {
+    grid-area: feed;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 3px 6px 6px rgba(75, 136, 179, 0.1); 
+  }
+  
+  .feed-title {
+    margin-top: 0px;
+  }
+  
+  /* Elementos criados com JavaScript */
+  .tweet-box {
+    display: grid;
+    grid-template-columns: 10% 90%; 
+    grid-template-rows: 40% 60%;
+    grid-template-areas: 
+    "mini-picture display-time-name"
+    "mini-picture published-tweet";
+    justify-content: flex-start;
+    border: 1px solid #E8E8FF;
+    padding: 8px;
+  }
+  
+  .mini-picture {
+    grid-area: mini-picture;
+    align-self: center;
+    justify-self: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: url(images/girassol-pequeno.png);
+  }
+  
+  .display-time-name {
+    grid-area: display-time-name;
+    color: grey;
+    font-size: 12px;
+  }
+  
+  .published-tweet {
+    grid-area: published-tweet;
+    word-wrap: break-word;
+    width: 750px;
+  }
