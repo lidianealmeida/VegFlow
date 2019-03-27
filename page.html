@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang=’pt-BR’>
+
+<head>
+	<meta charset="utf-8">
+	<title>VegFlow</title>
+	<!-- Link para arquivo CSS -->
+	<link rel="stylesheet" href="style.css">
+	<!-- Fontes -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+	<!-- Cabeçalho -->
+	<header class="header">
+		<h1>VegFlow</h1>
+	</header>
+	<!-- Principal -->
+	<main class="main">
+		<!-- Perfil -->
+		<section class="profile section-border">
+			<img class="profile-picture" src="images/persona.jpg">
+			<h3 class="profile-name">Lana Freitas</h3>
+			<p class="profile-user">@lanafreitas</p>
+			<hr class="line">
+			<div class="profile-info">
+				<div class="profile-info-item">
+					<p class="info-title">Like</p>
+					<span class="info-numbers">50</span>
+				</div>
+				<div class="profile-info-item">
+					<p class="info-title">Seguindo</p>
+					<span class="info-numbers">50</span>
+				</div>
+				<div class="profile-info-item">
+					<p class="info-title">Seguidores</p>
+					<span class="info-numbers">50</span>
+				</div>
+			</div>
+		</section>
+		<!-- Escrever tweet -->
+		<section class="tweet section-border">
+			<form class="tweet-form">
+				<div class="privacy">
+					<p class="privacy-text">PRIVACY:</p>
+					<input type="checkbox" class="public-post" />
+					<p class="privacy-text">pulic</p>
+					<input type="checkbox" class="private-post" />
+					<p class="privacy-text">private</p><br></br>
+				</div>
+				<textarea class="tweet-input" rows="3" cols="65" placeholder="O que está acontecendo?"></textarea>
+				<span class="character-counter">140</span>
+				<hr class="line">
+				<input class="tweet-button" type="submit" value="Publicar" disabled="disabled">
+			</form>
+		</section>
+		<!-- Feed -->
+		<section class="feed section-border">
+			<h3 class="feed-title">Visualizar posts:</h3>
+		</section>
+	</main>
+	<script src="script.js"></script>
+</body>
+
+</html>
