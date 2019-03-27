@@ -15,7 +15,7 @@ function enableButton() {
   tweetInput.addEventListener("keyup", startCounting);
 }
 
-function disableButton () {
+function disableButton() {
   tweetButton.style.opacity = "0.3";
   tweetButton.style.cursor = "not-allowed";
   tweetButton.disabled = true;  
