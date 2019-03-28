@@ -51,18 +51,36 @@ function resize() {
   }
 }
 
+// Gerar data e hora
+function showTime() {
+  var mydate = new Date();
+  var hours = mydate.getHours(); 
+  var minutes = mydate.getMinutes();
+  var formatMinutes = (minutes < 10 ) ? "0" + minutes : minutes;
+  var tweetTime = (hours >= 12) ? hours + ":" + formatMinutes + " PM" : hours + ":" + formatMinutes + " AM";
+  return tweetTime;
+}
+
 // Publicar tweet no feed
 tweetButton.addEventListener("click", submitTweet);
 
 function submitTweet(event) {
   var tweetBox = document.createElement("div");
-   var publishedTweet = document.createElement("p");
+  var tweetMiniPicture = document.createElement("img");
+  var displayTime = document.createElement("span");
+  var publishedTweet = document.createElement("p");
   var insertFeed = document.getElementsByClassName("feed")[0];
+  displayTime.textContent = "@lanafreitas" + " . " + showTime();
   publishedTweet.textContent = tweetInput.value;
   tweetBox.classList.add("tweet-box");
+  tweetMiniPicture.classList.add("mini-picture");
+  displayTime.classList.add("display-time-name");
   publishedTweet.classList.add("published-tweet");
+  tweetBox.appendChild(tweetMiniPicture);
+  tweetBox.appendChild(displayTime);
   tweetBox.appendChild(publishedTweet);
   insertFeed.appendChild(tweetBox);
+
   charCounter.textContent = 140;
   tweetForm.reset();
   event.preventDefault();
