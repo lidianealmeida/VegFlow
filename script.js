@@ -16,15 +16,15 @@ $(document).ready(function () {
 
       .catch(function (error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        let errorCode = error.code;
+        let errorMessage = error.message;
         alert(errorMessage)
         // ...
       });
   });
 
   // Botão cadastrar
-  $("#btn btn-primary").click(function (event) {
+  $("#exampleLogin").click(function (event) {
     event.preventDefault();
     let email = $("#exampleInputEmail1").val();
     let password = $("#exampleInputPassword1").val();
@@ -35,8 +35,8 @@ $(document).ready(function () {
       })
 
       .catch(function (error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        let errorCode = error.code;
+        let errorMessage = error.message;
         alert(errorMessage)
       });
   });
