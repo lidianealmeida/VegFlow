@@ -154,13 +154,33 @@
     justify-content: space-around;
     width: 70%;
     margin: 0px 30px;
-  }
+   }
   
   .privacy-text {
     font-size: 12px;
     margin: 0;
   }
+
+  /* Botões filtrar post */
+  .filter-button {
+    border: none;
+    border-radius: 17px;
+    outline: 0;
+    background-color: #23afaf;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: bolder;
+    padding: 8px 12px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
   
+  .filter-button:hover {
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.6);
+  }
+
+ 
   /* Feed */
   .feed {
     grid-area: feed;
@@ -171,6 +191,20 @@
   
   .feed-title {
     margin-top: 0px;
+  }
+
+  .display-content {
+    /* display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-around;
+    width: 70%;
+    margin: 0px 30px; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: -10px 184px -10px 30px;
   }
   
 /* Elementos criados com JavaScript */
