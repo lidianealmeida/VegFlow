@@ -2,18 +2,25 @@
 <html lang=’pt-BR’>
 
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 	<title>VegFlow</title>
 	<!-- Link para arquivo CSS -->
 	<link rel="stylesheet" href="style.css">
-	<!-- Fontes -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
 <body>
 	<!-- Cabeçalho -->
 	<header class="header">
-		<h1>VegFlow</h1>
+        <h1>VegFlow</h1>
+        <button class="btn-signout">logout</button>
 	</header>
 	<!-- Principal -->
 	<main class="main">
@@ -22,7 +29,8 @@
 			<img class="profile-picture" src="images/persona.jpg">
 			<h3 class="profile-name">Lana Freitas</h3>
 			<p class="profile-user">@lanafreitas</p>
-			<hr class="line">
+            <hr class="line">
+
 			<div class="profile-info">
 				<div class="profile-info-item">
 					<p class="info-title">Like</p>
@@ -48,10 +56,10 @@
 					<input type="checkbox" class="private-post" />
 					<p class="privacy-text">Privado</p><br></br>
 				</div>
-				<textarea class="tweet-input" rows="3" cols="65" placeholder="O que está acontecendo?"></textarea>
+				<textarea class="input-post" rows="3" cols="65" placeholder="O que está acontecendo?"></textarea>
 				<span class="character-counter">140</span>
 				<hr class="line">
-				<input class="tweet-button" type="submit" value="Publicar" disabled="disabled">
+				<button class="btn-post" >Postar</button>
 			</form>
 		</section>
 		<!-- Feed -->
@@ -63,11 +71,16 @@
 					<button class="filter-button friends-messages-button">Posts de amigos</button>
 					<button class="filter-button all-messages-button">Todos os posts</button>
 				</div>
-				
+				<p class="post-list"></p>
 			</div>
 		</section>
 	</main>
-	<script src="page.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="config.js"></script>
+    <script src="main.js"></script>
+    <script src="auth.js"></script>
 </body>
-
 </html>
+
+
