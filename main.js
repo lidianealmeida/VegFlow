@@ -24,7 +24,7 @@ $(document).ready(function() {
         event.preventDefault();
         let newPost = $(".input-post").val(); 
         let postfromDB = database.ref("post/" + USER_ID).push({
-            text:newPost
+            text:newPost,
         });  
    
    $(".post-list").append(`
