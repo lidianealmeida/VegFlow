@@ -3,14 +3,16 @@
 
 <head>
 	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<title>VegFlow</title>
 	<!-- Link para arquivo CSS -->
 	<link rel="stylesheet" href="style.css">
@@ -18,69 +20,100 @@
 
 <body>
 	<!-- Cabeçalho -->
-	<header class="header">
-        <h1>VegFlow</h1>
-        <button class="btn-signout">logout</button>
-	</header>
-	<!-- Principal -->
-	<main class="main">
-		<!-- Perfil -->
-		<section class="profile section-border">
-			<img class="profile-picture" src="images/persona.jpg">
-			<h3 class="profile-name">Lana Freitas</h3>
-			<p class="profile-user">@lanafreitas</p>
-            <hr class="line">
+	<div class="container">
+		<header class="row header container-fluid">
+			<div class="col-12">
+				<h1>VegFlow</h1>
+				<button class="btn-signout">logout</button>
+			</div>
+		</header>
+		<!-- Principal -->
+		<main class="main">
+			<!-- Perfil -->
+			<section class="profile section-border container">
+				<div class="row">
+					<div class="col-5 col-md-3">
+						<img class="profile-picture" src="images/persona.jpg">
+					</div>
+					<div class="about col-7 col-md-9">
+						<h3 class="profile-name">Lana Freitas</h3>
+						<p class="profile-user">@lanafreitas</p>
+						<p class="profile-vegan-type">Em transição</p>
+						<hr class="line">
+						<div class="row">
+							<div class="profile-info-item">
+								<p class="info-title">Seguidores</p>
+								<span class="info-numbers">50</span>
+							</div>
+							<div class="profile-info-item">
+								<p class="info-title">Seguindo</p>
+								<span class="info-numbers">50</span>
+							</div>
+							<div class="profile-info-item">
+								<p class="info-title">Dias sem carne</p>
+								<span class="info-numbers">15</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-			<div class="profile-info">
-				<div class="profile-info-item">
-					<p class="info-title">Like</p>
-					<span class="info-numbers">50</span>
-				</div>
-				<div class="profile-info-item">
-					<p class="info-title">Seguindo</p>
-					<span class="info-numbers">50</span>
-				</div>
-				<div class="profile-info-item">
-					<p class="info-title">Seguidores</p>
-					<span class="info-numbers">50</span>
-				</div>
+			<!-- Escrever tweet -->
+			<div class="container">
+				<section class="tweet section-border">
+					<form class="tweet-form">
+						<div class="privacy">
+							<p class="privacy-text">PRIVACIDADE:</p>
+							<input type="checkbox" class="public-post" />
+							<p class="privacy-text">Público</p>
+							<input type="checkbox" class="private-post" />
+							<p class="privacy-text">Privado</p><br></br>
+						</div>
+						<textarea class="input-post" rows="3" cols="65"
+							placeholder="O que está acontecendo?"></textarea>
+						<span class="character-counter">140</span>
+						<hr class="line">
+						<button class="btn-post">Postar</button>
+					</form>
+				</section>
 			</div>
-		</section>
-		<!-- Escrever tweet -->
-		<section class="tweet section-border">
-			<form class="tweet-form">
-				<div class="privacy">
-					<p class="privacy-text">PRIVACIDADE:</p>
-					<input type="checkbox" class="public-post" />
-					<p class="privacy-text">Público</p>
-					<input type="checkbox" class="private-post" />
-					<p class="privacy-text">Privado</p><br></br>
-				</div>
-				<textarea class="input-post" rows="3" cols="65" placeholder="O que está acontecendo?"></textarea>
-				<span class="character-counter">140</span>
-				<hr class="line">
-				<button class="btn-post" >Postar</button>
-			</form>
-		</section>
-		<!-- Feed -->
-		<section class="feed section-border">
-			<div class="feed">
-				<div class="display-content">
-					<h3 class="feed-title">Visualizar:</h3>
-					<button class="filter-button my-messages-button">Meus posts</button>
-					<button class="filter-button friends-messages-button">Posts de amigos</button>
-					<button class="filter-button all-messages-button">Todos os posts</button>
-				</div>
-				<p class="post-list"></p>
+			<!-- Feed -->
+			<div class="container">
+				<section class="feed section-border">
+					<div class="feed">
+						<div class="display-content">
+							<h3 class="feed-title">Visualizar:</h3>
+							<button class="filter-button my-messages-button">Meus posts</button>
+							<button class="filter-button friends-messages-button">Posts de amigos</button>
+							<button class="filter-button all-messages-button">Todos os posts</button>
+						</div>
+						<p class="post-list"></p>
+					</div>
 			</div>
-		</section>
-	</main>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="config.js"></script>
-    <script src="main.js"></script>
-    <script src="auth.js"></script>
+			</section>
+		</main>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="config.js"></script>
+		<script src="main.js"></script>
+		<script src="auth.js"></script>
+	</div>
 </body>
+
 </html>
-
-
+<!-- 
+<div class="container">
+	<div class="row Header">
+		<div class="col-12"></div>
+	</div>
+	<div class="row About container">
+		<div class="col-5 col-sm-3"></div>
+		<div class="about col-7 col-sm-9"></div>
+	</div>
+	<div class="row Posts">
+		<div class="col-sm-12"></div>
+	</div>
+	<div class="row Footer">
+		<div class="col-sm-12"></div>
+	</div>
+</div> -->
