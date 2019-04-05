@@ -62,19 +62,25 @@
 			<div class="container">
 				<section class="tweet section-border">
 					<form class="tweet-form">
-						<div class="privacy">
-							<p class="privacy-text">PRIVACIDADE:</p>
-							<input type="checkbox" class="public-post" />
-							<p class="privacy-text">Público</p>
-							<input type="checkbox" class="private-post" />
-							<p class="privacy-text">Privado</p><br></br>
-						</div>
 						<textarea class="input-post" rows="3" cols="65"
 							placeholder="O que está acontecendo?"></textarea>
 						<span class="character-counter">140</span>
-						<hr class="line">
-						<button button type="button" class="btn btn-light btn-post">Postar</button>
+						<!-- <p class="privacy-text">PRIVACIDADE:</p>
+							<input type="checkbox" class="public-post" />
+							<p class="privacy-text">Público</p>
+							<input type="checkbox" class="private-post" />
+							<p class="privacy-text">Privado</p><br></br> -->
 					</form>
+					<!-- Default switch -->
+					<div class="buttons container">
+						<div class="row flex-row-reverse">
+							<div class="custom-control custom-switch">
+								<input type="checkbox" class="custom-control-input" id="private-btn">
+								<label class="custom-control-label" for="private-btn">Privado</label>
+							</div>
+							<button button type="button" class="btn btn-light  btn-post">Postar</button>
+						</div>
+					</div>
 				</section>
 			</div>
 			<!-- Feed -->
