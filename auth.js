@@ -13,7 +13,6 @@ $(document).ready(function () {
       })
 
       .catch(function (error) {
-        var errorCode = error.code;
         var errorMessage = error.message;
         alert(errorMessage)
       });
@@ -38,7 +37,6 @@ $(document).ready(function () {
 
   $(".sign-google").click(function (event) {
     event.preventDefault();
-    console.log("aqui");
     var provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -60,9 +58,11 @@ $(document).ready(function () {
     event.preventDefault();
     var provider = new firebase.auth.FacebookAuthProvider();
 
-    firebase.auth().signInWithPopup(provider).then(function (result) {
+    firebase.auth().signInWithPopup(provider)
+    .then(function (result) {
       var token = result.credential.accessToken;
       var user = result.user;
+      window.location = "main.html?id=" + user.uid;
 
     }).catch(function (error) {
 
@@ -70,7 +70,7 @@ $(document).ready(function () {
       var errorMessage = error.message;
       var email = error.email;
       var credential = error.credential;
-
+      alert(errorMessage);
     });
   });
 
