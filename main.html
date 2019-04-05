@@ -62,18 +62,12 @@
 			<div class="container">
 				<section class="tweet section-border">
 					<form class="tweet-form">
-						<div class="privacy">
-							<p class="privacy-text">PRIVACIDADE:</p>
-							<input type="checkbox" class="public-post" />
-							<p class="privacy-text">Público</p>
-							<input type="checkbox" class="private-post" />
-							<p class="privacy-text">Privado</p><br></br>
-						</div>
-						<textarea class="input-post" rows="3" cols="65"
+			<textarea class="input-post" rows="3" cols="65"
 							placeholder="O que está acontecendo?"></textarea>
-						<span class="character-counter">140</span>
 						<hr class="line">
-						<button button type="button" class="btn btn-light btn-post">Postar</button>
+						<!-- inserindo togle -->
+						<input id="toggle-demo" class="togle-post" type="checkbox" data-toggle="toggle" data-on="Publico" data-off="Privado">
+						<button button type="button" class="btn-post">Postar</button>
 					</form>
 				</section>
 			</div>
@@ -83,9 +77,9 @@
 					<div class="feed">
 						<div class="display-content">
 							<h3 class="feed-title">Visualizar:</h3>
-							<button class="filter-button my-messages-button">Meus posts</button>
-							<button class="filter-button friends-messages-button">Posts de amigos</button>
-							<button class="filter-button all-messages-button">Todos os posts</button>
+							<button class="filter-post-public">Posts Publicos</button>
+							<button class="filter-post-private">Posts Privados</button>
+							<button class="filter-all-post">Todos Posts</button>
 						</div>
 						<p class="post-list"></p>
 					</div>
@@ -94,6 +88,8 @@
 		</main>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+			<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+			<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>	
 		<script src="config.js"></script>
 		<script src="main.js"></script>
 		<script src="auth.js"></script>
