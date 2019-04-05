@@ -144,7 +144,7 @@
   }
 
   /* Botões público e privado */
-  .privacy {
+  /* .privacy {
     display: flex;
     flex-direction: row;
     align-items:center;
@@ -156,7 +156,7 @@
   .privacy-text {
     font-size: 12px;
     margin: 0;
-  }
+  } */
 
   /* Botões filtrar post */
   .filter-button {
