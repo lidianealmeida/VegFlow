@@ -61,14 +61,32 @@
 			<!-- Escrever tweet -->
 			<div class="container">
 				<section class="tweet section-border">
-					<form class="tweet-form">
+					<form class="tweet-form"
 			<textarea class="input-post" rows="3" cols="65"
 							placeholder="O que está acontecendo?"></textarea>
 						<hr class="line">
 						<!-- inserindo togle -->
 						<input id="toggle-demo" class="togle-post" type="checkbox" data-toggle="toggle" data-on="Publico" data-off="Privado">
 						<button button type="button" class="btn-post">Postar</button>
+						<textarea class="input-post" rows="3" cols="65"
+							placeholder="O que está acontecendo?"></textarea>
+						<span class="character-counter">140</span>
+						<!-- <p class="privacy-text">PRIVACIDADE:</p>
+							<input type="checkbox" class="public-post" />
+							<p class="privacy-text">Público</p>
+							<input type="checkbox" class="private-post" />
+							<p class="privacy-text">Privado</p><br></br> -->
 					</form>
+					<!-- Default switch -->
+					<div class="buttons container">
+						<div class="row flex-row-reverse">
+							<div class="custom-control custom-switch">
+								<input type="checkbox" class="custom-control-input" id="private-btn">
+								<label class="custom-control-label" for="private-btn">Privado</label>
+							</div>
+							<button button type="button" class="btn btn-light  btn-post">Postar</button>
+						</div>
+					</div>
 				</section>
 			</div>
 			<!-- Feed -->

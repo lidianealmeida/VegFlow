@@ -48,28 +48,53 @@ $(document).ready(function () {
           status: toggle,
         });
 
+
         $(".post-list").prepend(`
           <p>
             <span> ${newPost} </span><br>
             <span> ${toggle} </span><br>
             <input type="button" value="Excluir Post"data-post-id=${postfromDB.key} />
           <p>`);
+        $(".post-list").append(`
+   <p>
+    <span> ${newPost} </span><br>
+   <input type="button" value="Excluir Post"data-post-id=${postfromDB.key} />
+   <p>`);
+
+
+// function removepost() {
+//   $(`input[data-post-id="${postfromDB.key}"]`).click;
+//     database.ref("/post/" + USER_ID + "/" + postfromDB.key).remove();
+//     $(this).parent().remove();
+ 
+// }
+
         $(`input[data-post-id="${postfromDB.key}"]`).click(function () {
           database.ref("/post/" + USER_ID + "/" + postfromDB.key).remove();
           $(this).parent().remove();
         });
       });
     })
+  })
 
-  document.getElementsByClassName
-  function myFunction() {
-    var txt;
-    var r = confirm("Press a button!");
-    if (r == true) {
-      txt = "You pressed OK!";
-    } else {
-      txt = "You pressed Cancel!";
-    }
-    document.getElementById("demo").innerHTML = txt;
-  }
-})
+//   document.getElementsByClassName
+//   function myFunction() {
+//     var txt;
+//     var r = confirm("Press a button!");
+//     if (r == true) {
+//       txt = "You pressed OK!";
+//     } else {
+//       txt = "You pressed Cancel!";
+//     }
+//     document.getElementById("demo").innerHTML = txt;
+//   }
+
+
+// function showTime() {
+//   var mydate = new Date();
+//   var hours = mydate.getHours(); 
+//   var minutes = mydate.getMinutes();
+//   var formatMinutes = (minutes < 10 ) ? "0" + minutes : minutes;
+//   var tweetTime = (hours >= 12) ? hours + ":" + formatMinutes + " PM" : hours + ":" + formatMinutes + " AM";
+//   return tweetTime;
+// }
