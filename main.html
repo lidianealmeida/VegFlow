@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang=’pt-BR’>
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +16,6 @@
 	<!-- Link para arquivo CSS -->
 	<link rel="stylesheet" href="style2.css">
 </head>
-
 <body>
 	<!-- Barra de Navegação -->
 	<nav class="navbar navbar-expand-lg navbar-light navbar-fixed" style="background-color: #B9DEA9;">
@@ -33,7 +31,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<div class="navbar-nav ml-auto">
-					<a class="nav-item nav-link active" href="#">Meu Perfil <span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link active" href="#">Meu Perfil </a>
 					<a class="nav-item nav-link disabled" href="#">Amigos(em breve)</a>
 					<a class="nav-item nav-link disabled" href="#">Receitas(em breve)</a>
 					<a class="nav-item nav-link btn-signout" href="#">Deslogar</a>
@@ -41,135 +39,65 @@
 			</div>
 		</div>
 	</nav>
-
-	<!-- Header Antigo -->
-	<div class="container">
-		<!-- <header class="row header container-fluid">
-			<div class="col-12">
-				<h1>VegFlow</h1>
-				<button type="button" class="btn btn-light btn-signout">Logout</button>
-			</div>
-		</header> -->
-
-		<!-- Principal -->
-		<main class="main">
-			<!-- Perfil -->
-			<section class="profile container">
-				<div class="row border border-dark">
-					<div class="col">
-						<img class="profile-picture" src="images/persona.jpg" width="70" height="70">
-					</div>
-					<div class="about">
-						<h3 class="profile-name">Lana Freitas</h3>
-						<p class="profile-user">@lanafreitas</p>
-						<p class="profile-vegan-type">Em transição</p>
-						<hr class="line">
-						<div class="row border border-warning">
-							<div class="profile-info-item">
-								<p class="info-title">Seguidores</p>
-								<span class="info-numbers">50</span>
-							</div>
-							<div class="profile-info-item">
-								<p class="info-title">Seguindo</p>
-								<span class="info-numbers">50</span>
-							</div>
-							<div class="profile-info-item">
-								<p class="info-title">Dias sem carne</p>
-								<span class="info-numbers">15</span>
-							</div>
-						</div>
-					</div>
-					<!-- Escrever tweet -->
-					<section class="col tweet section-border border border-danger">
-						<form class="tweet-form">
-							<textarea class="input-post" placeholder="O que está acontecendo?"></textarea>
-							<!-- <textarea class="input-post" rows="3" cols="65"
-									placeholder="O que está acontecendo?"></textarea> -->
-							<span class="character-counter">140</span>
-							<!-- <p class="privacy-text">PRIVACIDADE:</p>
-									<input type="checkbox" class="public-post" />
-									<p class="privacy-text">Público</p>
-									<input type="checkbox" class="private-post" />
-									<p class="privacy-text">Privado</p><br></br> -->
-						</form>
-						<!-- Default switch -->
-						<div class="buttons container">
-							<div class="row">
-								<div class="custom-control custom-switch">
-									<input type="checkbox" class="custom-control-input" id="private-btn">
-									<label class="custom-control-label" for="private-btn">Privado</label>
-								</div>
-								<button button type="button" class="btn btn-light btn-post">Postar</button>
-							</div>
-						</div>
-					</section>
+	<!-- Principal  -->
+	<main class="main container">
+		<!-- Perfil -->
+		<section class="profile container">
+			<div class="row border border-dark">
+				<div class="col">
+					<img class="profile-picture img-thumbnail img-fluid" src="https://res.cloudinary.com/dgbrbelp9/image/upload/v1554512073/img_secretaria.jpg">
 				</div>
-			</section>
-
-
-			<!-- Feed de Posts j -->
-			<section class="feed container border border-success">
-				<div class="feed">
-					<div class="display-content">
-						<h4 class="feed-title">Meus Posts:</h4>
-						<button class="filter-button my-messages-button">Meus posts</button>
-						<button class="filter-button friends-messages-button">Posts de amigos</button>
-						<button class="filter-button all-messages-button">Todos os posts</button>
-
-			
-						<!-- inserindo togle m -->
-						<input id="toggle-demo" class="togle-post" type="checkbox" data-toggle="toggle" data-on="Publico" data-off="Privado">
-						<button button type="button" class="btn-post">Postar</button>
-						<textarea class="input-post" rows="3" cols="65"
-							placeholder="O que está acontecendo?"></textarea>
-						<span class="character-counter">140</span>
-						<!-- <p class="privacy-text">PRIVACIDADE:</p>
-							<input type="checkbox" class="public-post" />
-							<p class="privacy-text">Público</p>
-							<input type="checkbox" class="private-post" />
-							<p class="privacy-text">Privado</p><br></br> -->
-					</form>
-					<!-- Default switch -->
-					<div class="buttons container">
-						<div class="row flex-row-reverse">
-							<div class="custom-control custom-switch">
-								<input type="checkbox" class="custom-control-input" id="private-btn">
-								<label class="custom-control-label" for="private-btn">Privado</label>
-							</div>
-							<button button type="button" class="btn btn-light  btn-post">Postar</button>
+				<div class="about col">
+					<h3 class="profile-name">Lana Freitas</h3>
+					<p class="profile-user">@lanafreitas</p>
+					<p class="profile-vegan-type">Em transição</p>
+					<hr class="line">
+					<div class="row border border-warning">
+						<div class="profile-info-item">
+							<p class="info-title">Seguidores</p>
+							<span class="info-numbers">50</span>
+						</div>
+						<div class="profile-info-item">
+							<p class="info-title">Seguindo</p>
+							<span class="info-numbers">50</span>
+						</div>
+						<div class="profile-info-item">
+							<p class="info-title">Dias sem carne</p>
+							<span class="info-numbers">15</span>
 						</div>
 					</div>
+				</div>
+				<!-- Escrever tweet -->
+				<section class="col tweet section-border border border-danger">
+					<textarea class="input-post" placeholder="O que está acontecendo aqui sos?"></textarea>
+					<span class="character-counter">140</span>
+					<input id="toggle-demo" class="togle-post tweet-form" type="checkbox" data-toggle="toggle"
+						data-on="Publico" data-off="Privado">
+					<button button type="button" class="btn btn-light btn-post">Postar</button>
 				</section>
 			</div>
-      
-      
-			<!-- Feed -->
-			<div class="container">
-				<section class="feed section-border">
-					<div class="feed">
-						<div class="display-content">
-							<h3 class="feed-title">Visualizar:</h3>
-							<button class="filter-post-public">Posts Publicos</button>
-							<button class="filter-post-private">Posts Privados</button>
-							<button class="filter-all-post">Todos Posts</button>
-						</div>
-						<p class="post-list"></p>
-
-            
-            
-					</div>
-					<p class="post-list"></p>
+		</section>
+		<!-- Feed -->
+		<section class="feed container border border-success">
+			<div class="feed">
+				<div class="display-content">
+					<h4 class="feed-title">Meus Posts:</h4>
+					<button class="filter-post-public">Posts Publicos</button>
+					<button class="filter-post-private">Posts Privados</button>
+					<button class="filter-all-post">Todos Posts</button>
 				</div>
-			</section>
-		</main>
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-			<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-			<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>	
-		<script src="config.js"></script>
-		<script src="main.js"></script>
-		<script src="auth.js"></script>
-	</div>
+				<p class="post-list"></p>
+			</div>
+		</section>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+	<script src="config.js"></script>
+	<script src="main.js"></script>
+	<script src="auth.js"></script>
+	<!-- Scripts bootstrap -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
 		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
 		crossorigin="anonymous"></script>
@@ -177,5 +105,4 @@
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
 </body>
-
 </html>
