@@ -2,6 +2,7 @@ var database = firebase.database();
 var USER_ID = window.location.search.match(/\?id=(.*)/);
 
 $(document).ready(function () {
+
   getPostFromDB();
   $(".btn-post").click(addPostClick);
   });
@@ -121,3 +122,5 @@ function startCounting() {
   const linesSize = lines.map(x => Math.max(1, Math.ceil(x.length / 38)));
   newPost.attr("rows", linesSize.reduce((acum, index) => acum + index));
 }
+
+
