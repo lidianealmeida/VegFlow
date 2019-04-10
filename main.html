@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang=’pt-BR’>
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
 	<!-- Link para arquivo CSS -->
 	<link rel="stylesheet" href="style2.css">
 </head>
+
 <body>
 	<!-- Barra de Navegação -->
 	<nav class="navbar navbar-expand-lg navbar-light navbar-fixed" style="background-color: #B9DEA9;">
@@ -42,53 +44,51 @@
 	<!-- Principal  -->
 	<main class="main container">
 		<!-- Perfil -->
-		<section class="profile container">
-			<div class="row border border-dark">
-				<div class="col">
-					<img class="profile-picture img-thumbnail img-fluid" src="https://res.cloudinary.com/dgbrbelp9/image/upload/v1554512073/img_secretaria.jpg">
-				</div>
-				<div class="about col-3">
+		<section class="profile container mt-3">
+			<div class="row profile border">
+				<div class="photo col-4 col-sm-3 col-md-2 m-auto">
+					<img class="profile-picture img-thumbnail rounded-circle text-center"
+						src="https://res.cloudinary.com/dgbrbelp9/image/upload/v1554512073/img_secretaria.jpg"></div>
+				<div class="profile-info col-9 col-md-4 col-lg-4 border m-auto">
 					<h3 class="profile-name">Lana Freitas</h3>
-					<p class="profile-user">@lanafreitas</p>
-					<p class="profile-vegan-type">Em transição</p>
-					<hr class="line">
-					<div class="row border border-warning">
-						<div class="profile-info-item">
+					<p class="profile-user">@lanafreitas - Em transição </p>
+					<!-- <p class="profile-vegan-type">Em transição</p> -->
+					<div class="profile info row m-2  m-auto">
+						<div class="profile-info-item border-top m-auto ">
 							<p class="info-title">Seguidores</p>
 							<span class="info-numbers">50</span>
 						</div>
-						<div class="profile-info-item">
+						<div class="profile-info-item border-top m-auto">
 							<p class="info-title">Seguindo</p>
 							<span class="info-numbers">50</span>
 						</div>
-						<div class="profile-info-item">
+						<div class="profile-info-item border-top m-auto">
 							<p class="info-title">Dias sem carne</p>
 							<span class="info-numbers">15</span>
 						</div>
 					</div>
 				</div>
-				<!-- Escrever tweet -->
-				<section class="col-6 tweet section-border border border-danger">
-					<textarea class="input-post" placeholder="O que está acontecendo?"></textarea>
-					<span class="character-counter">140</span>
-					<input id="toggle-demo" class="togle-post tweet-form" type="checkbox" data-toggle="toggle"
-						data-on="Publico" data-off="Privado">
-					<button button type="button" class="btn btn-light btn-post">Postar</button>
-				</section>
-			</div>
-		</section>
-		<!-- Feed -->
-		<section class="feed container border border-success">
-			<div class="feed">
-				<div class="display-content">
-					<h4 class="feed-title">Meus Posts:</h4>
-					<button class="filter-post-public">Posts Publicos</button>
-					<button class="filter-post-private">Posts Privados</button>
-					<button class="filter-all-post">Todos Posts</button>
+				<div class="post col-md-6 border border-dark m-auto">
+					<section class="col-12 tweet section-border border border-danger">
+						<textarea class="input-post" placeholder="O que está acontecendo?"></textarea>
+						<span class="character-counter">140</span>
+						<input id="toggle-demo" class="togle-post tweet-form" type="checkbox" data-toggle="toggle"
+							data-on="Publico" data-off="Privado">
+						<button button type="button" class="btn btn-light btn-post">Postar</button>
+					</section>
 				</div>
-				<p class="post-list"></p>
-			</div>
-		</section>
+				<!-- Feed -->
+				<section class="feed container border">
+					<div class="feed">
+						<div class="display-content m-auto">
+							<h4 class="feed-title">Meus Posts:</h4>
+							<button class="filter-post-public btn-light mb-3">Posts Publicos</button>
+							<button class="filter-post-private btn-light mb-3 mx-2">Posts Privados</button>
+							<button class="filter-all-post btn-light mb-3">Todos Posts</button>
+						</div>
+						<p class="post-list"></p>
+					</div>
+				</section>
 	</main>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -105,4 +105,5 @@
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
 </body>
+
 </html>
