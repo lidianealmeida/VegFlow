@@ -77,15 +77,14 @@ function getPostFromDB (){
   database.ref("/post/" + USER_ID).once('value')
   .then(function (snapshot) {
     snapshot.forEach(function (childSnapshot) {
+      
       const childKey = childSnapshot.key;
       const childData = childSnapshot.val();
       createListPost(childData.text, childKey, childData.like )
        });
       });
 }
-// Adiciona lista de post e inclui botão editar e excluir
-
-  function createListPost(newPost, key,likeInitial){
+// Adiciona lista de post e inclui botão editar e excluir function createListPost(newPost, key,likeInitial){
 
     $(".input-post").val("");
     $(".post-list").append(`
@@ -148,9 +147,6 @@ function likePost() {
 
 }
 likePost()
-
-
-
 // Configurações da textarea e contador de caracteres 
 const charCounter = $(".character-counter");
 const addNewPost = $(".btn-post");
