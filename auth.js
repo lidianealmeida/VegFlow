@@ -1,77 +1,56 @@
+var database = firebase.database(); 
 
 $(document).ready(function () {
 
-  $(".btn-cadastrar").click(function (event) {
+  $("#btn-cadastrar").click(function (event) {
     event.preventDefault();
-    let email = $(".sign-email").val();
-    let password = $(".sign-password").val();
+    var name = $(".sign-name").val(); 
+    var email = $(".sign-email").val();
+    var password = $(".sign-password").val(); 
+    var diet = $(".sign-diet").val(); 
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(function (response) {
-        console.log(response.user.uid);
-        window.location = "main.html?id=" + response.user.uid;
-      })
-
-      .catch(function (error) {
-        var errorMessage = error.message;
-        alert(errorMessage)
-      });
+    .then(function(response){
+    var userId = response.user.uid;
+    writeUserData(userId, name, email,diet);
+    redirect(userId);
+  })
+   .catch(function (error) {
+    errorMessage(error); 
+    });
   })
 
   $(".btn-login").click(function (event) {
     event.preventDefault();
-    let email = $(".sign-email").val();
-    let password = $(".sign-password").val();
+    var email = $(".sign-email-login").val();
+    var password = $(".sign-password-login").val();
 
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(function (response) {
-        window.location = "main.html?id=" + response.user.uid;
+        var userId = response.user.uid;
+        redirect(userId);
       })
 
       .catch(function (error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        alert(errorMessage);
+        errorMessage(error); 
       });
   })
 
   $(".sign-google").click(function (event) {
     event.preventDefault();
+    console.log("aqui");
     var provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithPopup(provider).then(function (result) {
       var token = result.credential.accessToken;
-      var user = result.user;
-      window.location = "main.html?id=" + user.uid;
+      var userId = result.user;
+      redirect(userId);
     })
 
       .catch(function (error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        var email = error.email;
-        var credential = error.credential;
-        alert(errorMessage);
+
+        errorMessage(error); 
       });
-  });
-
-  $(".sign-face").click(function (event) {
-    event.preventDefault();
-    var provider = new firebase.auth.FacebookAuthProvider();
-
-    firebase.auth().signInWithPopup(provider)
-    .then(function (result) {
-      var token = result.credential.accessToken;
-      var user = result.user;
-      window.location = "main.html?id=" + user.uid;
-
-    }).catch(function (error) {
-
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      var email = error.email;
-      var credential = error.credential;
-      alert(errorMessage);
-    });
   });
 
   $(".btn-signout").click(function (event) {
@@ -81,12 +60,29 @@ $(document).ready(function () {
         window.location = "index.html";
       })
       .catch(function (error) {
-        var errorMessage = error.message;
-        alert(error.message);
+        errorMessage(error); 
+
       });
   });
+});
 
-})
+  function writeUserData(userId, name, email, diet) {
+    database.ref('users/' + userId).set({
+      name: name,
+      email: email,
+      diet: diet
+    });
+  }
+
+  function redirect(userId){
+    window.location = "main.html?id=" + userId;
+  }
+
+  function errorMessage(error){
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert(errorCode,errorMessage);
+  }
 
 
 
