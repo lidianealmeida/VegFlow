@@ -51,9 +51,6 @@ Manter o produto sempre atualizado, utilizar um layout simples e confortável . 
 
 ## Sobre o nome VegFlow
 Escolhido o nome VeganFlow (fluxo em inglês). A ideia é que os usuários estejam em uma nova onda, ou seja, um novo fluxo de vida.
-O processo até chegar a ele contou com um longo brainstorm conforme imagem abaixo:
-
-***imagem sobre processo de criação do nome
 
 ## Personas e Definição de Usuário
 
@@ -73,8 +70,6 @@ Contexto de utilização do produto: pessoas que pretendem mudar de hábito alim
 
 Outro passo muito importante foi o mapeamento de redes sociais ja existentes, esse processo foi fundamental para poder descobrir qual é a aceitação do produto por parte dos usuários.
 Com base nas pesquisas verificou-se que não há quantidade expressiva de redes especificas para este público, o que é muito comum são perfis ou comunidades em redes sociais já consolidadas.
-
-***imagem de mapeamentos realizados.
 
 ## Checklist do projeto
 
