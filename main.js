@@ -4,6 +4,7 @@ var USER_ID = window.location.search.match(/\?id=(.*)/)[1];
 $(document).ready(function () {
   getPostFromDB();
   $(".btn-post").click(addPostClick);
+  $(".btn-post").click(disableButton); 
 
 
   database.ref("users/"+ USER_ID).once("value")
@@ -26,7 +27,7 @@ $(document).ready(function () {
     });
   });
 
-  $(".btn-filter-private").click(function(){
+  $(".btn-filter-private").click(function(){ 
     database.ref("/post/" + USER_ID).orderByChild("type").equalTo("privado")
       .once('value', function (snapshot){
         $(".post-list").html("");
