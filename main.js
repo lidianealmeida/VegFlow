@@ -1,100 +1,90 @@
 var database = firebase.database();
-var USER_ID = window.location.search.match(/\?id=(.*)/);
+var USER_ID = window.location.search.match(/\?id=(.*)/)[1];
 
 $(document).ready(function () {
   getPostFromDB();
   $(".btn-post").click(addPostClick);
-  }); 
+
 
   database.ref("users/"+ USER_ID).once("value")
   .then(function(snapshot){
     var userInfo = snapshot.val();
-     console.log(userInfo); 
     $(".profile-name").text(userInfo.name);
     $(".profile-user").text(userInfo.email); 
     $(".profile-diet-type").text(userInfo.diet);
   });
 
-  
-
-   
-// Inicia a função pegando os valores ao click do botão postar
-function addPostClick (event){
-    event.preventDefault();
-    let newPost = $(".input-post").val();
-    var optionPrivate = $("#private-options option:selected").val();
-    let postFromDB = addPostDB(newPost,optionPrivate);
-    createListPost(newPost, postFromDB.key)
-}
-
-// Adicionar novo post ao database
-function addPostDB(newPost,optionPrivate){
-  return database.ref("post/" + USER_ID).push({
-    text: newPost,
-    type: optionPrivate
-  });  
-}
- 
-$(".btn-all-posts").click(function(){
-  database.ref("/post/" + USER_ID).once('value')
-  .then(function (snapshot) {
-    snapshot.forEach(function (childSnapshot) {
-      const childKey = childSnapshot.key;
-      const childData = childSnapshot.val();
-      const childtype = childData.type; 
-      console.log(childData.type); 
-       createListPost(childData.text, childKey ) 
-    })
-  });
-});
-
-$(".btn-filter-private").click(function(){
-  
-   database.ref("/post/" + USER_ID).orderByChild("type").equalTo("privado")
-   .on('value', function (snapshot){
-    snapshot.forEach(function (childSnapshot) {
-      $(".post-list").html("");
-      const childKey = childSnapshot.key;
-      const childData = childSnapshot.val();
-      createListPost(childData.text, childKey ) 
-      console.log(childData.type)
-       });
-  });
-  
-})
-
-$(".btn-filter-public").click(function(){
-  
-  database.ref("/post/" + USER_ID).orderByChild("type").equalTo("publico")
-  .on('value', function (snapshot){
-   snapshot.forEach(function (childSnapshot) {
-    $(".post-list").html("");
-     const childKey = childSnapshot.key;
-     const childData = childSnapshot.val();
-     createListPost(childData.text, childKey ) 
-     console.log(childData.type)
+  $(".btn-all-posts").click(function(){
+    database.ref("/post/" + USER_ID).once('value')
+      .then(function (snapshot) {
+        $(".post-list").html("");
+        snapshot.forEach(function (childSnapshot) {
+          const childKey = childSnapshot.key;
+          const childData = childSnapshot.val();
+       createListPost(childData.text, childKey, childData.like ) 
+      })
     });
- });
- 
+  });
+
+  $(".btn-filter-private").click(function(){
+    database.ref("/post/" + USER_ID).orderByChild("type").equalTo("privado")
+      .once('value', function (snapshot){
+        $(".post-list").html("");
+        snapshot.forEach(function (childSnapshot) {
+          const childKey = childSnapshot.key;
+          const childData = childSnapshot.val();
+        createListPost(childData.text, childKey, childData.like )
+      });
+    });
+  })
+
+  $(".btn-filter-public").click(function(){ 
+    database.ref("/post/" + USER_ID).orderByChild("type").equalTo("publico")
+      .once('value', function (snapshot){
+        $(".post-list").html("");
+        snapshot.forEach(function (childSnapshot) {
+          const childKey = childSnapshot.key;
+          const childData = childSnapshot.val();
+        createListPost(childData.text, childKey, childData.like )
+      });
+    });
+  })
 })
+  // Inicia a função pegando os valores ao click do botão postar
+  function addPostClick (event){
+    event.preventDefault();
+    var newPost = $(".input-post").val();
+    var optionPrivate = $("#private-options option:selected").val();
+    var postFromDB = addPostDB(newPost,optionPrivate);
+    var likeInitial = 0;
 
+    createListPost(newPost, postFromDB.key,likeInitial)
+  }
 
-
-// Adicionar novo user ao database
-function getPostFromDB (){
+  // Adicionar novo post ao database
+  function addPostDB(newPost,optionPrivate){
+    return database.ref("post/" + USER_ID).push({
+     text: newPost,
+     like: 0,
+     type: optionPrivate
+    });  
+  }
+ 
+  // Adicionar novo user ao database
+ function getPostFromDB (){
   database.ref("/post/" + USER_ID).once('value')
   .then(function (snapshot) {
     snapshot.forEach(function (childSnapshot) {
       const childKey = childSnapshot.key;
       const childData = childSnapshot.val();
-       createListPost(childData.text, childKey ) 
+      createListPost(childData.text, childKey, childData.like )
        });
       });
 }
 
 
 // Adiciona lista de post e inclui botão editar e excluir
-function createListPost(newPost, key){
+function createListPost(newPost, key,likeInitial){
   $(".input-post").val("");
   $(".post-list").prepend(`
 
@@ -108,7 +98,10 @@ function createListPost(newPost, key){
   <span data-newPost-id="${key}" >${newPost} </span><br>
   <input type="button" value="Editar" data-edit-id=${key} />
   <input type="button" value="Excluir" data-delete-id=${key} />
-  <p>`);
+  <i data-toggle="modal" class="favorite-modal" data-id=${key} data-target="#favorite-post-modal">Like</i>
+  <i data-toggle="modal" class="favorite-count-modal" data-id=${key} data-target="#favorite-count-modal"> ${likeInitial}</i>
+  <p>
+  `);
 
   $(`input[data-delete-id="${key}"]`).click(function () {
     let confirmDel = confirm("Confirma a exclusão da postagem?")
@@ -126,7 +119,31 @@ function createListPost(newPost, key){
       text: newText
     })
    });
+
+   $(`.favorite-modal[data-id=${key}]`).click(function fav(){
+    let favNum = $(`.favorite-count-modal[data-id=${key}]`).html();
+    favNum = parseInt(favNum)+1;
+    $(`.favorite-count-modal[data-id=${key}]` ).html(favNum);
+    database.ref("/post/" + USER_ID + "/" + key ).update({like: favNum });
+  });
+   
   }
+
+  // Botão like
+  function likePost() {
+    let heartIcon = $(".fa-heart");
+    heartIcon.click(function () {
+      let curtidas = $(this)
+  
+      curtidas.val(Number(curtidas.val()) + 1);
+      $(".fa-heart").removeClass('far').addClass('fas');
+      console.log(curtidas.val())
+      $('#likes').html(curtidas.val())
+    })
+  
+  }
+  likePost()
+
 
 // Configurações da textarea e contador de caracteres 
 const charCounter = $(".character-counter");
