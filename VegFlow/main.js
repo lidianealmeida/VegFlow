@@ -36,7 +36,7 @@ function addPostDB(newPost,optionPrivate){
 }
  
 $(".btn-all-posts").click(function(){
-  database.ref("/post/" + USER_ID).once('value')
+  database.ref("/post/" + USER_ID).on('value')
   .then(function (snapshot) {
     snapshot.forEach(function (childSnapshot) {
       const childKey = childSnapshot.key;
@@ -53,7 +53,6 @@ $(".btn-filter-private").click(function(){
    database.ref("/post/" + USER_ID).orderByChild("type").equalTo("privado")
    .on('value', function (snapshot){
     snapshot.forEach(function (childSnapshot) {
-      $(".post-list").html("");
       const childKey = childSnapshot.key;
       const childData = childSnapshot.val();
       createListPost(childData.text, childKey ) 
@@ -68,12 +67,13 @@ $(".btn-filter-public").click(function(){
   database.ref("/post/" + USER_ID).orderByChild("type").equalTo("publico")
   .on('value', function (snapshot){
    snapshot.forEach(function (childSnapshot) {
-    $(".post-list").html("");
+   
      const childKey = childSnapshot.key;
      const childData = childSnapshot.val();
      createListPost(childData.text, childKey ) 
      console.log(childData.type)
-    });
+     
+      });
  });
  
 })
