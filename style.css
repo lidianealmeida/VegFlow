@@ -32,18 +32,6 @@
    
   }
   
-  /* Principal */
-  /* .main {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 22% 43%; 
-    grid-template-areas: 
-    "profile tweet"
-    "feed feed";
-    grid-gap: 15px;
-    justify-content: center;
-    padding: 15px 0px;
-  } */
   
   /* Perfil */
   .profile {

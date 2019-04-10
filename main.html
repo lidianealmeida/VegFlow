@@ -13,6 +13,8 @@
 	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<title>VegFlow</title>
 	<!-- Link para arquivo CSS -->
 	<link rel="stylesheet" href="style2.css">
@@ -46,10 +48,10 @@
 		<!-- Perfil -->
 		<section class="profile container mt-3">
 			<div class="row profile border">
-				<div class="photo col-4 col-sm-3 col-md-2 m-auto">
+				<div class="photo col-4 col-sm-4 col-md-3 col-lg-2 m-auto">
 					<img class="profile-picture img-thumbnail rounded-circle text-center"
 						src="https://res.cloudinary.com/dgbrbelp9/image/upload/v1554512073/img_secretaria.jpg"></div>
-				<div class="profile-info col-9 col-md-4 col-lg-4 border m-auto">
+				<div class="profile-info col-9 col-sm-8 col-md-7 col-lg-4 m-auto">
 					<h3 class="profile-name">Lana Freitas</h3>
 					<p class="profile-user">@lanafreitas - Em transição </p>
 					<!-- <p class="profile-vegan-type">Em transição</p> -->
@@ -68,50 +70,46 @@
 						</div>
 					</div>
 				</div>
-				<div class="post col-12 col-md-6 border border-dark m-auto">
-					
-						<!-- marquelly  -->
-						<div class=" form-group container ">
-							<section class="tweet section-border">
-								<form class="tweet-form">
-									<textarea class="form-control input-post" id="toggle-demo" rows="3"
-										placeholder="O que está acontecendo?"></textarea>
-									<select id="private-options">
-										<option value="publico">Publico</option>
-										<option value="privado">Privado</option>
-									</select>
+				<div class="post col-12 col-md-12 col-lg-6 m-auto">
+
+					<!-- marquelly  -->
+					<div class=" form-group container ">
+						<section class="tweet section-border">
+							<form class="tweet-form">
+								<textarea class="form-control input-post" id="toggle-demo" rows="3"
+									placeholder="O que está acontecendo?"></textarea>
+								<div class="d-flex justify-content-between">
 									<span class="character-counter">140</span>
-									<button button type="button" class="btn btn-light btn-post">Postar</button>
-								</form>
-							</section>
-						</div>
+									<div>
+										<select id="private-options">
+											<option value="publico">Publico</option>
+											<option value="privado">Privado</option>
+										</select>
+										<button button type="button" class="btn-light btn-post">Postar</button>
+									</div>
 
-						<!-- responsivo 
-						<div class="form-group">
-						 <label for="exampleTextarea">Example textarea</label> 
-							<textarea class="form-control" id="toggle-demo" rows="3"></textarea>
-						</div>
-
-						atual 
-						<input id="toggle-demo" class="togle-post tweet-form" type="checkbox" data-toggle="toggle"
-							data-on="Publico" data-off="Privado">
-						<button button type="button" class="btn btn-light btn-post">Postar</button> -->
-					</section>
-				</div>
+								</div>
 
 
-				<!-- Feed -->
-				<section class="feed container border">
-					<div class="feed">
-						<div class="display-content m-auto">
-							<h4 class="feed-title">Meus Posts:</h4>
-							<button class="filter-post-public btn-light mb-3">Posts Publicos</button>
-							<button class="filter-post-private btn-light mb-3 mx-2">Posts Privados</button>
-							<button class="filter-all-post btn-light mb-3">Todos Posts</button>
-						</div>
-						<p class="post-list"></p>
+							</form>
+						</section>
 					</div>
-				</section>
+		</section>
+		</div>
+
+
+		<!-- Feed -->
+		<section class="feed container border mt-2">
+			<div class="feed">
+				<div class="display-content m-auto">
+					<h4 class="feed-title">Meus Posts:</h4>
+					<button class="filter-post-public btn-light mb-3">Posts Publicos</button>
+					<button class="filter-post-private btn-light mb-3 mx-2">Posts Privados</button>
+					<button class="filter-all-post btn-light mb-3">Todos Posts</button>
+				</div>
+				<p class="post-list"></p>
+			</div>
+		</section>
 	</main>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
