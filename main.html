@@ -52,9 +52,9 @@
 					<img class="profile-picture img-thumbnail rounded-circle text-center"
 						src="https://res.cloudinary.com/dgbrbelp9/image/upload/v1554512073/img_secretaria.jpg"></div>
 				<div class="profile-info col-9 col-sm-8 col-md-7 col-lg-4 m-auto">
-					<h3 class="profile-name">Lana Freitas</h3>
-					<p class="profile-user">@lanafreitas - Em transição </p>
-					<!-- <p class="profile-vegan-type">Em transição</p> -->
+					<h3 class="profile-name"></h3>
+					<p class="profile-user"></p>
+					<p class="profile-diet-type"></p>
 					<div class="profile info row m-2  m-auto">
 						<div class="profile-info-item border-top m-auto ">
 							<p class="info-title">Seguidores</p>
@@ -71,8 +71,6 @@
 					</div>
 				</div>
 				<div class="post col-12 col-md-12 col-lg-6 m-auto">
-
-					<!-- marquelly  -->
 					<div class=" form-group container ">
 						<section class="tweet section-border">
 							<form class="tweet-form">
@@ -85,27 +83,22 @@
 											<option value="publico">Publico</option>
 											<option value="privado">Privado</option>
 										</select>
-										<button button type="button" class="btn-light btn-post">Postar</button>
+										<button button type="button" disabled class="btn-light btn-post">Postar</button>
 									</div>
-
 								</div>
-
-
 							</form>
 						</section>
 					</div>
 		</section>
 		</div>
-
-
 		<!-- Feed -->
 		<section class="feed container border mt-2">
 			<div class="feed">
 				<div class="display-content m-auto">
 					<h4 class="feed-title">Meus Posts:</h4>
-					<button class="filter-post-public btn-light mb-3">Posts Publicos</button>
-					<button class="filter-post-private btn-light mb-3 mx-2">Posts Privados</button>
-					<button class="filter-all-post btn-light mb-3">Todos Posts</button>
+					<button class="btn-filter-public btn-light mb-3">Posts Publicos</button>
+					<button class="btn-filter-private btn-light mb-3 mx-2">Posts Privados</button>
+					<button class="btn-all-posts btn-light mb-3">Todos Posts</button>
 				</div>
 				<p class="post-list"></p>
 			</div>
