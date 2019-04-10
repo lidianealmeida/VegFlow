@@ -76,6 +76,7 @@ $(document).ready(function () {
   database.ref("/post/" + USER_ID).once('value')
   .then(function (snapshot) {
     snapshot.forEach(function (childSnapshot) {
+      
       const childKey = childSnapshot.key;
       const childData = childSnapshot.val();
       createListPost(childData.text, childKey, childData.like )
@@ -86,40 +87,37 @@ $(document).ready(function () {
 
 // Adiciona lista de post e inclui botão editar e excluir
 function createListPost(newPost, key,likeInitial){
-  $(".input-post").val("");
-  $(".post-list").prepend(`
 
-  <div class="post-feed-box-public" data-post-box-public-id=${key}>
-  <div data-image-id=${key}>
-    <img class="post-feed-image" width="60px" height="60px" src="images/persona.jpg" />
-  </div>
-
+    $(".input-post").val("");
+    $(".post-list").append(`
   
-  <p>
-  <span data-newPost-id="${key}" >${newPost} </span><br>
-  <input type="button" value="Editar" data-edit-id=${key} />
-  <input type="button" value="Excluir" data-delete-id=${key} />
-  <i data-toggle="modal" class="favorite-modal" data-id=${key} data-target="#favorite-post-modal">Like</i>
-  <i data-toggle="modal" class="favorite-count-modal" data-id=${key} data-target="#favorite-count-modal"> ${likeInitial}</i>
-  <p>
-  `);
-
-  $(`input[data-delete-id="${key}"]`).click(function () {
-    let confirmDel = confirm("Confirma a exclusão da postagem?")
-    if(confirmDel){
-    database.ref("/post/" + USER_ID + "/" + key).remove();
-    $(this).parent().remove();
-    $(`div[data-post-box-public-id="${key}"]`).remove();
-    }
-  });
-
-    $(`input[data-edit-id="${key}"]`).click(function () {
-    const newText = prompt(`Altere o seu post: ${newPost}`);
-    $(`span[data-newPost-id=${key}]`).text(newText);  
-    database.ref("/post/" + USER_ID + "/" + key).update({
-      text: newText
-    })
-   });
+    <div class="post-feed-box-public border mt-3" data-post-box-public-id=${key}>
+    <div data-image-id=${key}>
+      <img class="post-feed-image" width="60px" height="60px" src="images/persona.jpg" />
+    </div>
+  
+    
+    <p>
+    <span data-newPost-id="${key}" >${newPost} </span><br>
+    <input type="button" class="btn-light" value="Editar" data-edit-id=${key} />
+    <input type="button" class="btn-light" value="Excluir" data-delete-id=${key} />
+   
+    <i data-toggle="modal" class="favorite-modal" data-id=${key} data-target="#favorite-post-modal"> 
+    <i class="fas fa-thumbs-up"></i>    
+    </i>
+    <i data-toggle="modal" class="favorite-count-modal" data-id=${key} data-target="#favorite-count-modal"> ${likeInitial}</i>
+     
+    <p>`);
+  
+      $(`input[data-delete-id="${key}"]`).click(function () {
+        let confirmDel = confirm("Confirma a exclusão da postagem?")
+        if(confirmDel){
+        database.ref("/post/" + USER_ID + "/" + key).remove();
+        $(this).parent().remove();
+        $(`div[data-post-box-public-id="${key}"]`).remove();
+        }
+      }); 
+  
 
    $(`.favorite-modal[data-id=${key}]`).click(function fav(){
     let favNum = $(`.favorite-count-modal[data-id=${key}]`).html();
@@ -135,6 +133,7 @@ function createListPost(newPost, key,likeInitial){
     let heartIcon = $(".fa-heart");
     heartIcon.click(function () {
       let curtidas = $(this)
+
   
       curtidas.val(Number(curtidas.val()) + 1);
       $(".fa-heart").removeClass('far').addClass('fas');
