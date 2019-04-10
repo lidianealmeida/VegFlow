@@ -49,8 +49,8 @@ function createListPost(newPost, key){
   
   <p>
   <span data-newPost-id="${key}" >${newPost} </span><br>
-  <input type="button" value="Editar" data-edit-id=${key} />
-  <input type="button" value="Excluir" data-delete-id=${key} />
+  <input type="button" class=" btn-light" value="Editar" data-edit-id=${key} />
+  <input type="button" class=" btn-light" value="Excluir" data-delete-id=${key} />
   <p>`);
 
     $(`input[data-delete-id="${key}"]`).click(function () {
