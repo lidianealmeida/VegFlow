@@ -68,15 +68,38 @@
 						</div>
 					</div>
 				</div>
-				<div class="post col-md-6 border border-dark m-auto">
-					<section class="col-12 tweet section-border border border-danger">
-						<textarea class="input-post" placeholder="O que está acontecendo?"></textarea>
-						<span class="character-counter">140</span>
+				<div class="post col-12 col-md-6 border border-dark m-auto">
+					
+						<!-- marquelly  -->
+						<div class=" form-group container ">
+							<section class="tweet section-border">
+								<form class="tweet-form">
+									<textarea class="form-control input-post" id="toggle-demo" rows="3"
+										placeholder="O que está acontecendo?"></textarea>
+									<select id="private-options">
+										<option value="publico">Publico</option>
+										<option value="privado">Privado</option>
+									</select>
+									<span class="character-counter">140</span>
+									<button button type="button" class="btn btn-light btn-post">Postar</button>
+								</form>
+							</section>
+						</div>
+
+						<!-- responsivo 
+						<div class="form-group">
+						 <label for="exampleTextarea">Example textarea</label> 
+							<textarea class="form-control" id="toggle-demo" rows="3"></textarea>
+						</div>
+
+						atual 
 						<input id="toggle-demo" class="togle-post tweet-form" type="checkbox" data-toggle="toggle"
 							data-on="Publico" data-off="Privado">
-						<button button type="button" class="btn btn-light btn-post">Postar</button>
+						<button button type="button" class="btn btn-light btn-post">Postar</button> -->
 					</section>
 				</div>
+
+
 				<!-- Feed -->
 				<section class="feed container border">
 					<div class="feed">
