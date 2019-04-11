@@ -101,6 +101,7 @@ function createListPost(newPost, key,likeInitial){
   <input type="button" value="Excluir" data-delete-id=${key} />
   <i data-toggle="modal" class="favorite-modal" data-id=${key} data-target="#favorite-post-modal">
   <i class="fas fa-thumbs-up"></i>
+  </i>
   <i data-toggle="modal" class="favorite-count-modal" data-id=${key} data-target="#favorite-count-modal"> ${likeInitial}</i>
   <p>
   `);
