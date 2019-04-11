@@ -171,15 +171,15 @@ function disableButton() {
 
 // Alteração cor contador e ajuste dimensões textarea
 function startCounting() {
-  const charAllowed = 140;
+  const charAllowed = 700;
   const typedChar = newPost.val().length;
   let remainingChar = charAllowed - typedChar;
   charCounter.text(remainingChar);
-  if (typedChar >= 130 && typedChar <= 140) {
+  if (typedChar >= 650 && typedChar <= 700) {
     charCounter.css("color", "orange");
-  } else if (typedChar > 140 || typedChar === 0 || !newPost.val().trim()) { 
+  } else if (typedChar > 700 || typedChar === 0 || !newPost.val().trim()) { 
     disableButton();
-    if (typedChar > 140) {
+    if (typedChar > 700) {
       charCounter.css("color", "red");
     }
   } else {
